@@ -1,4 +1,3 @@
-import './App.css';
 import store from './store';
 import Home from './Components/Home'
 import {Provider} from 'react-redux'
