@@ -8,7 +8,7 @@ import Button from './Button'
 const Home = () => {
 
     const [filter, setFilter] = useState(false)
-
+    const [characterDetailsId, setcharacterDetailsId] = useState(2)
     const dispatch = useDispatch()
 
     const characters = useSelector(charactersSelector)
@@ -24,7 +24,13 @@ const Home = () => {
     return (
         <div className='characters-list__container'>
             <div >
-            {!isLoading && characters.map((character, index) => ((filter && index < characters.length -5) || !filter) && <CharacterItem key={index} character={character}/> )}
+            {!isLoading && characters.map((character, index) => ((filter && index < characters.length -5) || !filter)
+            &&
+            <CharacterItem
+                key={index}
+                character={character}
+                showDetails={index == characterDetailsId}
+                setDetailsPanel={()=>setcharacterDetailsId(index)}/> )}
             </div>
             <Button size='full' variant='primary' type='button' onClick={displayMoreCharacters}>
                 Add more characters (+5)
