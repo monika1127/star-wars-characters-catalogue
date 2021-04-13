@@ -28,11 +28,11 @@ export const getCharacters =()=> async (dispatch)=>{
         })
 }
 
-export const getMoreCharacters =(url)=> async (dispatch)=>{
-    setLoading();
+export const getMoreCharacters =(url, callback)=> async (dispatch)=>{
     fetch(url)
         .then(res => res.json())
         .then(res => {
+            callback()
             dispatch({
                 type: GET_MORE_CHARACTERS,
                 payload: res
