@@ -8,7 +8,40 @@ body {
   font-size: 16px;
   font-weight: 400;
   margin: 0;
-  background-color: #505f69;
+  background-color: #181818;
   color: white;
+}
+
+.character__container {
+  margin: 24px;
+  padding: 24px;
+  background-color: #383838;
+  -webkit-box-shadow: 1px 1px 4px 1px #383838;
+          box-shadow: 1px 1px 4px 1px #383838;
+  border-radius: 4px;
+}
+
+.character__header {
+  font-size: 28px;
+  font-weight: 600;
+  color: white;
+}
+
+.character__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #bdbdbd;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.character__info-title {
+  font-size: 12px;
+}
+
+.character__info-value {
+  padding-left: 8px;
 }
 /*# sourceMappingURL=application.css.map */

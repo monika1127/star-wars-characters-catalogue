@@ -2,6 +2,7 @@ import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {getCharacters} from '../Redux/characters/actions'
 import {charactersSelector, loadingSelector} from '../Redux/characters/selectors'
+import CharacterItem from './CharacterItem'
 
 const Home = () => {
     const dispatch = useDispatch()
@@ -14,7 +15,9 @@ const Home = () => {
     console.log(characters)
     return (
         <div>
-            {!isLoading && characters.map((character, index) => <div key={index}>{character.name}</div>)}
+            <div className='characters-list__container'>
+            {!isLoading && characters.map((character, index) => <CharacterItem key={index} character={character}/>)}
+            </div>
         </div>
     )
 }
