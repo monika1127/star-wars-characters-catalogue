@@ -7,7 +7,7 @@ function App() {
   return  (
   <Provider store={store}>
     <div>
-      <div> Star Wars - characters catalogue</div>;
+      <div> Star Wars - characters catalogue</div>
       <Home />
     </div>
   </Provider>

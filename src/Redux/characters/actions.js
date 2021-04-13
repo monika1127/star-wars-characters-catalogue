@@ -12,12 +12,12 @@ export const setLoading = () =>{
 
 export const getCharacters =()=> async (dispatch)=>{
     setLoading();
-    fetch('https://swapi.dev/api/people')
+    fetch('https://swapi.dev/api/people/')
         .then(res => res.json())
-        .then(data => {
+        .then(res => {
             dispatch({
                 type: GET_CHARACTERS,
-                payload: data.results
+                payload: res.results
             })
         })
         .catch((error) => {

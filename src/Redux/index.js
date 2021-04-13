@@ -3,5 +3,5 @@ import charctersReducers from './characters/reducers';
 
 
 export default combineReducers({
-  charcters: charctersReducers,
+  characters: charctersReducers,
 });

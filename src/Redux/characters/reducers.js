@@ -5,7 +5,7 @@ import {
 } from './types'
 
 const initialState = {
-    charcters: [],
+    characters: [],
     isLoading: true
 }
 
@@ -20,10 +20,11 @@ const reducer = (state=initialState, action)=> {
             return {
                 ...state,
                 isLoading: false,
-                charcters: action.payload
+                characters: action.payload
             }
         case SET_ERROR:
             return {
+                ...state,
                 isLoading: false
             }
         default:
