@@ -1,38 +1,20 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  background-color: var(--neutral-dark);
+  color: var(--white);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+:root {
+  --primary: rgb(247, 238, 10);
+  --primary-light: rgb(228, 225, 150);
+  --secondary: rgb(146, 48, 81);
+  --secondary-light: rgb(184, 139, 154);
+  --neutral-very-dark: rgb(36, 44, 49);
+  --neutral-dark: rgb(80, 95, 105);
+  --neutral: rgb(137, 166, 184);
+  --neutral-light: rgb(171, 205, 226);
+  --white: rgb(255, 255, 255);
 }
