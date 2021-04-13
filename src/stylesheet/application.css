@@ -15,10 +15,11 @@ body {
 .characters-list__container {
   max-width: 700px;
   margin: auto;
+  margin-bottom: 48px;
 }
 
 .character__container {
-  margin: 24px;
+  margin: 24px auto;
   padding: 24px;
   background-color: #383838;
   -webkit-box-shadow: 1px 1px 4px 1px #383838;
@@ -47,5 +48,51 @@ body {
 
 .character__info-value {
   padding-left: 8px;
+}
+
+.button {
+  margin: auto;
+  cursor: pointer;
+  display: block;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  -webkit-box-shadow: 1px 1px 4px 1px #383838;
+          box-shadow: 1px 1px 4px 1px #383838;
+}
+
+.button:focus {
+  opacity: 0.8;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.btn--full {
+  width: 100%;
+  padding: 16px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.btn--small {
+  width: 160px;
+  padding: 8px;
+}
+
+.btn--primary {
+  color: #383838;
+  background-color: #f7d40a;
+}
+
+.btn--secondary {
+  color: #383838;
+  background-color: #923051;
+}
+
+.btn--neutral {
+  color: #bdbdbd;
+  background-color: #181818;
 }
 /*# sourceMappingURL=application.css.map */

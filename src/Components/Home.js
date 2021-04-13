@@ -17,12 +17,12 @@ const Home = () => {
     const getMoreCharacters = ()=> console.log('add more')
 
     return (
-        <div>
-            <div className='characters-list__container'>
+        <div className='characters-list__container'>
+            <div >
             {!isLoading && characters.map((character, index) => <CharacterItem key={index} character={character}/>)}
             </div>
             <Button size='full' variant='primary' type='button' onClick={getMoreCharacters}>
-                ADD MORE CHARACTERS
+                Add more characters (+5)
             </Button>
         </div>
     )
