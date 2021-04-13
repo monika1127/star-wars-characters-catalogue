@@ -13,19 +13,8 @@ body {
 }
 
 .characters-list__container {
-  max-width: 500px;
+  max-width: 700px;
   margin: auto;
-}
-
-@media only screen and (min-width: 992px) {
-  .characters-list__container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    max-width: 1200px;
-  }
 }
 
 .character__container {
@@ -53,10 +42,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.character__info-title {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .character__info-value {
