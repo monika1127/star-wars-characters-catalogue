@@ -2,6 +2,7 @@ import {
     GET_CHARACTERS,
     SET_LOADING,
     SET_ERROR,
+    GET_MORE_CHARACTERS
 } from './types'
 
 export const setLoading = () =>{
@@ -17,7 +18,24 @@ export const getCharacters =()=> async (dispatch)=>{
         .then(res => {
             dispatch({
                 type: GET_CHARACTERS,
-                payload: res.results
+                payload: res
+            })
+        })
+        .catch((error) => {
+            dispatch({
+                type: SET_ERROR
+            })
+        })
+}
+
+export const getMoreCharacters =(url)=> async (dispatch)=>{
+    setLoading();
+    fetch(url)
+        .then(res => res.json())
+        .then(res => {
+            dispatch({
+                type: GET_MORE_CHARACTERS,
+                payload: res
             })
         })
         .catch((error) => {

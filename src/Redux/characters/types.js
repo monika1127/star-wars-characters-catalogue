@@ -1,3 +1,4 @@
 export const SET_LOADING = 'SET_LOADING'
 export const GET_CHARACTERS = 'GET_CHARACTERS'
 export const SET_ERROR = "SET_ERROR"
+export const GET_MORE_CHARACTERS = "GET_MORE_CHARACTERS"

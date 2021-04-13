@@ -2,11 +2,13 @@ import {
     GET_CHARACTERS,
     SET_LOADING,
     SET_ERROR,
+    GET_MORE_CHARACTERS
 } from './types'
 
 const initialState = {
     characters: [],
-    isLoading: true
+    isLoading: true,
+    moreCharactersURL: null
 }
 
 const reducer = (state=initialState, action)=> {
@@ -20,8 +22,19 @@ const reducer = (state=initialState, action)=> {
             return {
                 ...state,
                 isLoading: false,
-                characters: action.payload
+                characters: action.payload.results,
+                moreCharactersURL: action.payload.next
             }
+        case GET_MORE_CHARACTERS:
+            const updatedCharacters = state.characters
+            Array.prototype.push.apply(updatedCharacters, action.payload.results)
+            return {
+                ...state,
+                isLoading: false,
+                characters: updatedCharacters,
+                moreCharactersURL: action.payload.next
+            }
+
         case SET_ERROR:
             return {
                 ...state,
