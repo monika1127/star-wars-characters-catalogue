@@ -7,9 +7,9 @@ const CharacterMovies = (props) => {
     const [moviesList, setMoviesList] = useState([])
 
     useEffect(() => {
-        moviesUrl.map(movieUrl => fetch(movieUrl)
-        .then(res => res.json())
-        .then(res => setMoviesList(movie=>[...movie, res]))
+        Promise.all(moviesUrl.map(movieUrl => fetch(movieUrl)))
+        .then(res => Promise.all(res.map(res => res.json()))
+        .then(res => setMoviesList(()=>[...res]))
         )
         }, [moviesUrl])
 
