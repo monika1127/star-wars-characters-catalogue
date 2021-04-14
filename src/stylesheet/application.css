@@ -31,20 +31,29 @@ body {
           box-shadow: 1px 1px 4px 1px #383838;
   border-radius: 4px;
   cursor: pointer;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
 }
 
 .character__container--basic:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
   background-color: #b69e19;
   -webkit-box-shadow: 1px 1px 4px 1px #e4e196;
           box-shadow: 1px 1px 4px 1px #e4e196;
 }
 
 .character__container--basic.--expanded {
+  cursor: auto;
   border-radius: 4px;
   -webkit-box-shadow: 1px 1px 4px 1px #383838;
           box-shadow: 1px 1px 4px 1px #383838;
   background-color: #b69e19;
   margin-bottom: 0;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .character__container--additional {
