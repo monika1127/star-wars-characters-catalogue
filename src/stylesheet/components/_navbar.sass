@@ -1,0 +1,33 @@
+.navbar
+    display: flex
+    justify-content: space-between
+    background-color: $neutral-very-dark
+    border-bottom: 2px solid $neutral-dark
+    box-shadow: 1px 1px 4px 1px $neutral-dark
+    padding: $m-xs $m
+
+.navbar__items
+    display: flex
+    align-items: center
+
+.navbar__items
+    text-align: center
+
+.navbar__item
+    color: $neutral-light
+    border-radius: $border-radius-xs
+    padding: $m-sm
+    margin-left: $m-sm
+
+
+.navbar__item--description
+    display: none
+
+@media (min-width: 768px)
+    .navbar__item--description
+         display: block
+         padding-left: $m-xs
+    .navbar__item
+        background-color: $neutral-dark
+        display: flex
+        align-items: center
