@@ -1,26 +1,36 @@
-.character__container
+.character__container--basic
     margin: $m auto
     padding: $m
     background-color: $neutral-dark
     box-shadow: 1px 1px 4px 1px $neutral-dark
     border-radius: $border-radius-xs
-    flex-basis: 40%
     cursor: pointer
     &:hover
         background-color: $primary-dark
         box-shadow: 1px 1px 4px 1px $primary-light
+    &.--expanded
+        border-radius: $border-radius-xs
+        box-shadow: 1px 1px 4px 1px $neutral-dark
+        background-color: $primary-dark
+        margin-bottom: 0
+
+.character__container--additional
+    margin: 0 auto $m auto
+    padding: $m
+    background-color: $neutral-dark
+    box-shadow: 1px 1px 4px 1px $neutral-dark
+    border-radius: $border-radius-xs
 
 .character__header
     font-size: $font-size-xl
     font-weight: $font-weight-bold
     color: $white
 
-.character__info
-    display: flex
-    color: $neutral-light
-    align-items: center
-    font-size: $font-size-sm
-
-
-.character__info-value
-    padding-left: $m-xs
+.details__header
+    margin-top: $m-sm
+    font-size: $font-size-lg
+    font-weight: $font-weight-bold
+    &.--secondary
+        color: $secondary
+    &.--primary
+        color: $primary-dark

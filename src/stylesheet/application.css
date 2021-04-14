@@ -13,33 +13,67 @@ body {
 }
 
 .page__container {
-  max-width: 700px;
-  margin: auto;
-  margin-bottom: 48px;
+  margin: 0 16px 48px 16px;
 }
 
-.character__container {
+@media (min-width: 768px) {
+  .page__container {
+    max-width: 700px;
+    margin: 0 auto 48px auto;
+  }
+}
+
+.character__container--basic {
   margin: 24px auto;
   padding: 24px;
   background-color: #383838;
   -webkit-box-shadow: 1px 1px 4px 1px #383838;
           box-shadow: 1px 1px 4px 1px #383838;
   border-radius: 4px;
-  -ms-flex-preferred-size: 40%;
-      flex-basis: 40%;
   cursor: pointer;
 }
 
-.character__container:hover {
+.character__container--basic:hover {
   background-color: #b69e19;
   -webkit-box-shadow: 1px 1px 4px 1px #e4e196;
           box-shadow: 1px 1px 4px 1px #e4e196;
+}
+
+.character__container--basic.--expanded {
+  border-radius: 4px;
+  -webkit-box-shadow: 1px 1px 4px 1px #383838;
+          box-shadow: 1px 1px 4px 1px #383838;
+  background-color: #b69e19;
+  margin-bottom: 0;
+}
+
+.character__container--additional {
+  margin: 0 auto 24px auto;
+  padding: 24px;
+  background-color: #383838;
+  -webkit-box-shadow: 1px 1px 4px 1px #383838;
+          box-shadow: 1px 1px 4px 1px #383838;
+  border-radius: 4px;
 }
 
 .character__header {
   font-size: 28px;
   font-weight: 600;
   color: white;
+}
+
+.details__header {
+  margin-top: 16px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.details__header.--secondary {
+  color: #8f1f44;
+}
+
+.details__header.--primary {
+  color: #b69e19;
 }
 
 .character__info {
@@ -53,8 +87,39 @@ body {
   font-size: 14px;
 }
 
+.character__info.--expanded {
+  border-left: 2px solid #f7d40a;
+  margin: 8px 16px;
+  padding-left: 8px;
+  color: white;
+}
+
+.character__info-header {
+  color: #bdbdbd;
+  min-width: 65px;
+  opacity: 0.6;
+}
+
 .character__info-value {
   padding-left: 8px;
+}
+
+.movie__container {
+  border-left: 5px solid #8f1f44;
+  margin: 16px;
+  padding-left: 8px;
+}
+
+.movie__additionall-info {
+  color: #797979;
+  font-style: italic;
+  font-size: 14px;
+}
+
+.movie__year {
+  margin-top: 4px;
+  font-size: 14px;
+  color: #bdbdbd;
 }
 
 .button {
@@ -102,30 +167,6 @@ body {
   color: #e0e0e0;
   background-color: #383838;
   border: 1px solid #797979;
-}
-
-.movies__header {
-  margin-top: 16px;
-  color: #8f1f44;
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.movie__container {
-  border-left: 5px solid #8f1f44;
-  margin: 16px;
-  padding-left: 8px;
-}
-
-.movie__additionall-info {
-  color: #bdbdbd;
-  font-style: italic;
-}
-
-.movie__year {
-  margin-top: 4px;
-  font-size: 14px;
-  color: #b88b9a;
 }
 
 .navbar {
