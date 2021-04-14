@@ -1,17 +1,15 @@
 import React, {useEffect, useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {getCharacters, getMoreCharacters} from '../Redux/characters/actions'
-import {charactersSelector, loadingSelector, moreCharactersURLSelector} from '../Redux/characters/selectors'
-import CharacterItem from './CharacterItem'
+import {loadingSelector, moreCharactersURLSelector} from '../Redux/characters/selectors'
 import Button from './Button'
+import CharactersList from './CharactersList'
 
 const Home = () => {
 
     const [filter, setFilter] = useState(false)
-    const [characterDetailsId, setcharacterDetailsId] = useState(null)
     const dispatch = useDispatch()
 
-    const characters = useSelector(charactersSelector)
     const isLoading = useSelector(loadingSelector)
     const moreCharactersURL = useSelector(moreCharactersURLSelector)
 
@@ -24,13 +22,7 @@ const Home = () => {
     return (
         <div className='page__container'>
             <div >
-            {!isLoading && characters.map((character, index) => ((filter && index < characters.length -5) || !filter)
-            &&
-            <CharacterItem
-                key={index}
-                character={character}
-                showDetails={index == characterDetailsId}
-                setDetailsPanel={()=>setcharacterDetailsId(index)}/> )}
+            {!isLoading && <CharactersList filter={filter}/>}
             </div>
             <Button size='full' variant='primary' type='button' onClick={displayMoreCharacters}>
                 Add more characters (+5)
