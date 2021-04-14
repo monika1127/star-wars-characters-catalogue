@@ -8,8 +8,6 @@ const CharactersList = (props) => {
 
     const {filter} = props
     const [characterDetailsId, setcharacterDetailsId] = useState(null)
-
-
     const characters = useSelector(charactersSelector)
 
     return (
@@ -27,7 +25,7 @@ const CharactersList = (props) => {
 }
 
 CharactersList.propTypes = {
-    filter: PropTypes.string.isRequired,
+    filter: PropTypes.bool.isRequired,
 }
 
 export default CharactersList

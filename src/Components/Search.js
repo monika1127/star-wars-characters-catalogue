@@ -3,23 +3,24 @@ import {useDispatch, useSelector} from 'react-redux'
 import {charactersSelector, loadingSelector} from '../Redux/characters/selectors'
 import {searchByName, searchByMovie} from '../Redux/characters/actions'
 import Button from './Button'
+import CharactersList from './CharactersList'
 
 const Search = () => {
 
     const [searchType, setSearchType] = useState('byName')
     const [searchValue, setSearchValue]= useState('')
-    const [charctersList, setCharactersList] = useState(false)
+    const [charctersListLoaded, setCharactersListLoaded] = useState(false)
     const dispatch = useDispatch()
 
     const characters = useSelector(charactersSelector)
 
     const searchForCharacters = ()=>{
         searchType==="byName" && dispatch(searchByName(searchValue, searchCallback))
-        searchType==="byMovie" && searchByMovie(searchValue)
+        searchType==="byMovie" && dispatch(searchByMovie(searchValue, searchCallback))
     }
 
     const searchCallback = ()=> {
-        setCharactersList(true)
+        setCharactersListLoaded(true)
         setSearchValue("")
     }
 
@@ -51,8 +52,8 @@ const Search = () => {
                 onClick={searchForCharacters}>
                 Search
             </Button>
-        {charctersList && characters.length===0 && <div className='search__alert'>No matches found<div>Search for another character.</div></div>}
-        {charctersList && characters.length>0 && <div>chracters</div>}
+        {charctersListLoaded && characters.length===0 && <div className='search__alert'>No matches found<div>Search for another character.</div></div>}
+        {charctersListLoaded && characters.length>0 && <CharactersList filter={false}/>}
 
         </div>
     )

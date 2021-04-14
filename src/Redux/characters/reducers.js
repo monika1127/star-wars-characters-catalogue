@@ -41,9 +41,13 @@ const reducer = (state=initialState, action)=> {
                 ...state,
                 isLoading: false,
                 characters: action.payload.results,
-                moreCharactersURL: action.payload.next
             }
-
+        case SEARCH_CHARACTERS_BY_MOVIE:
+            return {
+                ...state,
+                isLoading: false,
+                characters: action.payload,
+            }
         case SET_ERROR:
             return {
                 ...state,
