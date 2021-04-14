@@ -6,32 +6,25 @@ const Search = () => {
     const [searchValue, setSearchValue]= useState('')
 
     return (
-        <div>
-            <div>Search for characters</div>
-            <input
-                type="text"
-                id="character"
-                placeholder="search for character..."
-                value={searchValue}
-                onChange={(e)=>setSearchValue(e.target.value)}>
-            </input>
-
-            <div>
+        <div className='page__container'>
+            <div className="search__title">Search for characters</div>
+            <div className="search__container">
+                <div
+                    className={`search__option ${searchType==='byName' ? "--active" : "--inactive"}`}
+                    onClick={()=>setSearchType("byName")} >by name
+                </div>
+                <div
+                    className={`search__option ${searchType==='byMovie' ? "--active" : "--inactive"}`}
+                    onClick={()=>setSearchType("byMovie")} >by movie
+                </div>
                 <input
-                    type="radio"
-                    id="byName"
-                    checked={searchType==="byName"}
-                    onChange={()=>setSearchType("byName")} >
+                    className='search__input'
+                    type="text"
+                    id="character"
+                    placeholder="search for character..."
+                    value={searchValue}
+                    onChange={(e)=>setSearchValue(e.target.value)}>
                 </input>
-                <label>by name</label>
-
-                <input
-                    type="radio"
-                    id="byMovie"
-                    checked={searchType==="byMovie"}
-                    onChange={()=>setSearchType("byMovie")}>
-                </input>
-                <label>by movie</label>
             </div>
 
             <Button

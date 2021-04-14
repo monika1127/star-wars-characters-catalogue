@@ -22,7 +22,7 @@ const Home = () => {
     const displayMoreCharacters = ()=> filter ? setFilter(false) : dispatch(getMoreCharacters(moreCharactersURL, ()=> setFilter(true)))
 
     return (
-        <div className='characters-list__container'>
+        <div className='page__container'>
             <div >
             {!isLoading && characters.map((character, index) => ((filter && index < characters.length -5) || !filter)
             &&
