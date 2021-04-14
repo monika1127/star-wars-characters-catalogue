@@ -8,7 +8,7 @@ import Button from './Button'
 const Home = () => {
 
     const [filter, setFilter] = useState(false)
-    const [characterDetailsId, setcharacterDetailsId] = useState(2)
+    const [characterDetailsId, setcharacterDetailsId] = useState(null)
     const dispatch = useDispatch()
 
     const characters = useSelector(charactersSelector)

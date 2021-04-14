@@ -102,4 +102,28 @@ body {
   color: #bdbdbd;
   background-color: #181818;
 }
+
+.movies__header {
+  margin-top: 16px;
+  color: #923051;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.movie__container {
+  border-left: 5px solid #923051;
+  margin: 16px;
+  padding-left: 8px;
+}
+
+.movie__additionall-info {
+  color: #bdbdbd;
+  font-style: italic;
+}
+
+.movie__year {
+  margin-top: 4px;
+  font-size: 14px;
+  color: #b88b9a;
+}
 /*# sourceMappingURL=application.css.map */
