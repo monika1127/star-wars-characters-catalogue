@@ -1,9 +1,18 @@
 import React, {useState} from 'react'
+import {useDispatch, useSelector} from 'react-redux'
+import {searchByName, searchByMovie} from '../Redux/characters/actions'
 import Button from './Button'
 const Search = () => {
 
     const [searchType, setSearchType] = useState('byName')
     const [searchValue, setSearchValue]= useState('')
+
+    const dispatch = useDispatch()
+
+    const searchForCharacters = ()=>{
+        searchType==="byName" && dispatch(searchByName(searchValue))
+        searchType==="byMovie" && searchByMovie(searchValue)
+    }
 
     return (
         <div className='page__container'>
@@ -30,10 +39,9 @@ const Search = () => {
             <Button
                 size='full'
                 variant='primary'
-                onClick={() => console.log('serach for character')}>
+                onClick={searchForCharacters}>
                 Search
             </Button>
-
         </div>
     )
 }
