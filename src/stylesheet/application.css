@@ -222,4 +222,10 @@ body {
 .search__option.--active {
   background-color: #8f1f44;
 }
+
+.search__alert {
+  margin: 48px auto;
+  color: #bdbdbd;
+  text-align: center;
+}
 /*# sourceMappingURL=application.css.map */

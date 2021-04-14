@@ -47,11 +47,12 @@ export const getMoreCharacters =(url, callback)=> async (dispatch)=>{
         })
 }
 
-export const searchByName =(name)=> async (dispatch)=>{
+export const searchByName =(name, callback)=> async (dispatch)=>{
     setLoading();
     fetch(`https://swapi.dev/api/people/?search=${name}`)
         .then(res => res.json())
         .then(res => {
+            callback()
              dispatch({
                 type: SEARCH_CHARACTERS_BY_NAME,
                 payload: res
