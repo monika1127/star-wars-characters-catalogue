@@ -5,11 +5,19 @@ import {
   GET_MORE_CHARACTERS,
   SEARCH_CHARACTERS_BY_NAME,
   SEARCH_CHARACTERS_BY_MOVIE,
+  REMOVE_LOADING,
+  CLEAR_CHARACTERS_LIST
 } from "./types";
 
 export const setLoading = () => {
   return {
     type: SET_LOADING,
+  };
+};
+
+export const clearCharactersList = () => {
+  return {
+    type: CLEAR_CHARACTERS_LIST,
   };
 };
 
@@ -52,7 +60,7 @@ export const searchByName = (name, callback) => async (dispatch) => {
   fetch(`https://swapi.dev/api/people/?search=${name}`)
     .then((res) => res.json())
     .then((res) => {
-      callback();
+      callback(res.results.length > 0 ? false : true);
       dispatch({
         type: SEARCH_CHARACTERS_BY_NAME,
         payload: res,
@@ -65,28 +73,37 @@ export const searchByName = (name, callback) => async (dispatch) => {
     });
 };
 
-export const searchByMovie = (movie, callback) => async (dispatch) => {
+//
+export const searchByMovie = (characters, callback) => async (dispatch) => {
+  dispatch(setLoading());
+  Promise.all(characters.map((url) => fetch(url)))
+    .then((res) => Promise.all(res.map((el) => el.json()))
+    .then((res) => {
+      callback(res.length>0 ? false : true)
+      dispatch({
+        type: SEARCH_CHARACTERS_BY_MOVIE,
+        payload: res,
+      });
+    })
+    )
+};
+
+export const searchMovie = (movie, callback) => async (dispatch) => {
   dispatch(setLoading());
   fetch(`https://swapi.dev/api/films/?search=${movie}`)
     .then((res) => res.json())
     .then((res) => {
-      const characters = res.results[0].characters;
-
-      Promise.all(characters.map((url) => fetch(url)))
-        .then((res) => Promise.all(res.map((el) => el.json())))
-        .then((res) => {
-          callback();
-          dispatch({
-            type: SEARCH_CHARACTERS_BY_MOVIE,
-            payload: res,
-          });
-        })
+      const moviesMatched = res.results;
+      callback(moviesMatched, moviesMatched.length > 0 ? false : true);
+      dispatch({
+        type: REMOVE_LOADING,
+      });
     })
-
     .catch((error) => {
-      callback()
+      callback();
       dispatch({
         type: SET_ERROR,
       });
     });
 };
+

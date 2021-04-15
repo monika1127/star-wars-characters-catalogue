@@ -149,7 +149,6 @@ input:hover, input:focus, input:active {
 }
 
 .button {
-  margin: auto;
   cursor: pointer;
   display: block;
   border: none;
@@ -333,5 +332,34 @@ input:hover, input:focus, input:active {
   margin: 48px auto;
   color: #bdbdbd;
   text-align: center;
+}
+
+.search__movie-picker {
+  border-bottom: 2px solid #383838;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+}
+
+.search__movie-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+@media (min-width: 768px) {
+  .search__movie-picker {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
 }
 /*# sourceMappingURL=application.css.map */

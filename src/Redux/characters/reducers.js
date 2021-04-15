@@ -4,12 +4,14 @@ import {
     SET_ERROR,
     GET_MORE_CHARACTERS,
     SEARCH_CHARACTERS_BY_NAME,
-    SEARCH_CHARACTERS_BY_MOVIE
+    SEARCH_CHARACTERS_BY_MOVIE,
+    REMOVE_LOADING,
+    CLEAR_CHARACTERS_LIST
 } from './types'
 
 const initialState = {
     characters: [],
-    isLoading: true,
+    isLoading: false,
     moreCharactersURL: null
 }
 
@@ -54,6 +56,17 @@ const reducer = (state=initialState, action)=> {
                 ...state,
                 isLoading: false,
                 characters: []
+            }
+        case REMOVE_LOADING:
+            return {
+                ...state,
+                isLoading: false,
+            }
+        case CLEAR_CHARACTERS_LIST:
+            return {
+                ...state,
+                characters: [],
+                moreCharactersURL: null
             }
         default:
             return state
