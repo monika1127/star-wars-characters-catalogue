@@ -15,11 +15,18 @@ input
      border-top-right-radius: $border-radius-xs
      border-bottom-right-radius: $border-radius-xs
      border-bottom-left-radius: $border-radius-xs
+     outline: none
      padding-left: $m-sm
-     &:-webkit-autofill
-        &
-        &:hover
-        &:focus
-        &:active
-            font-size: $font-size-base
-            transition: background-color 5000s
+     &:hover,
+     &:focus,
+     &:active
+            border: 2px solid $secondary
+            border-top-right-radius: $border-radius-xs
+            border-bottom-right-radius: $border-radius-xs
+            border-bottom-left-radius: $border-radius-xs
+
+
+.spinner
+    margin: auto
+    text-align: center
+    margin: $m

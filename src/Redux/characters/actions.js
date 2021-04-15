@@ -48,7 +48,7 @@ export const getMoreCharacters = (url, callback) => async (dispatch) => {
 };
 
 export const searchByName = (name, callback) => async (dispatch) => {
-  setLoading();
+  dispatch(setLoading());
   fetch(`https://swapi.dev/api/people/?search=${name}`)
     .then((res) => res.json())
     .then((res) => {
@@ -66,7 +66,7 @@ export const searchByName = (name, callback) => async (dispatch) => {
 };
 
 export const searchByMovie = (movie, callback) => async (dispatch) => {
-  setLoading();
+  dispatch(setLoading());
   fetch(`https://swapi.dev/api/films/?search=${movie}`)
     .then((res) => res.json())
     .then((res) => {
@@ -74,17 +74,17 @@ export const searchByMovie = (movie, callback) => async (dispatch) => {
 
       Promise.all(characters.map((url) => fetch(url)))
         .then((res) => Promise.all(res.map((el) => el.json())))
-        // .then((res) => res.map((el) => el.json()))
-        .then(res => {
-            callback();
-            dispatch({
-              type: SEARCH_CHARACTERS_BY_MOVIE,
-              payload: res,
-            });
+        .then((res) => {
+          callback();
+          dispatch({
+            type: SEARCH_CHARACTERS_BY_MOVIE,
+            payload: res,
           });
+        })
     })
 
     .catch((error) => {
+      callback()
       dispatch({
         type: SET_ERROR,
       });

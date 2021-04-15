@@ -4,7 +4,7 @@ import {getCharacters, getMoreCharacters} from '../Redux/characters/actions'
 import {loadingSelector, moreCharactersURLSelector} from '../Redux/characters/selectors'
 import Button from './Button'
 import CharactersList from './CharactersList'
-
+import BounceLoader from 'react-spinners/BounceLoader'
 const Home = () => {
 
     const [filter, setFilter] = useState(false)
@@ -18,6 +18,10 @@ const Home = () => {
     }, [dispatch])
 
     const displayMoreCharacters = ()=> filter ? setFilter(false) : dispatch(getMoreCharacters(moreCharactersURL, ()=> setFilter(true)))
+
+    if(isLoading) return  <div className="spinner">
+        <BounceLoader color={"#8F1F44"} loading={isLoading} />
+        </div>
 
     return (
         <div className='page__container'>

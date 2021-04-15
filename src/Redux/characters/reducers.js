@@ -18,7 +18,8 @@ const reducer = (state=initialState, action)=> {
         case SET_LOADING:
             return {
                 ...state,
-                isLoading: true
+                isLoading: true,
+                characters: []
             }
         case GET_CHARACTERS:
             return {
@@ -51,7 +52,8 @@ const reducer = (state=initialState, action)=> {
         case SET_ERROR:
             return {
                 ...state,
-                isLoading: false
+                isLoading: false,
+                characters: []
             }
         default:
             return state
