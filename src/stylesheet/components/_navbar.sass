@@ -1,10 +1,18 @@
 .navbar
-    display: flex
-    justify-content: space-between
+    position: sticky
+    top: 0
+
+.navbar__content
     background-color: $neutral-very-dark
+    padding: $m-xs $m
+    justify-content: space-between
+    display: flex
     border-bottom: 2px solid $neutral-dark
     box-shadow: 1px 1px 4px 1px $neutral-dark
-    padding: $m-xs $m
+
+.navbar__separator
+    height: $m-lg
+    background: linear-gradient(0deg, transparent, $neutral-very-dark)
 
 .navbar__items
     display: flex

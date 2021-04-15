@@ -18,8 +18,9 @@ const CharacterItem = (props) => {
   useEffect(() => {
     showDetails &&
       Promise.all(films.map((movieUrl) => fetch(movieUrl))).then((res) =>
-        Promise.all(res.map((res) => res.json())).then((res) =>
+        Promise.all(res.map((res) => res.json())).then((res) =>{
           setMoviesList(() => [...res])
+          }
         )
       );
   }, [showDetails]);
