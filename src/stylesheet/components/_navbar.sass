@@ -4,25 +4,25 @@
 
 .navbar__content
     background-color: $neutral-very-dark
-    padding: $m-xs $m
-    justify-content: space-between
-    display: flex
     border-bottom: 2px solid $neutral-dark
     box-shadow: 1px 1px 4px 1px $neutral-dark
+    display: flex
+    justify-content: space-between
+    padding: $m-xs $m
 
 .navbar__separator
-    height: $m-lg
     background: linear-gradient(0deg, transparent, $neutral-very-dark)
+    height: $m-lg
 
 .navbar__items
-    display: flex
     align-items: center
+    display: flex
 
 .navbar__item
-    color: $neutral-light
     border-radius: $border-radius-xs
-    padding: $m-sm
+    color: $neutral-light
     margin-left: $m-sm
+    padding: $m-sm
     text-decoration: none
     transform: scale(1)
     transition: all 500ms ease-in-out
@@ -35,15 +35,14 @@
     display: none
 
 @media (min-width: 768px)
-
     .navbar__item--description
         display: block
         padding-left: $m-xs
 
     .navbar__item
+        align-items: center
         background-color: $neutral-dark
         display: flex
-        align-items: center
         &:hover
             transform: scale(1.05)
             .navbar__item--description

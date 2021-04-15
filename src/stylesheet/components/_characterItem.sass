@@ -1,37 +1,37 @@
 .character__container--basic
+    background-color: $neutral-dark
+    border-radius: $border-radius-xs
+    box-shadow: 1px 1px 4px 1px $neutral-dark
+    cursor: pointer
     margin: $m auto
     padding: $m
-    background-color: $neutral-dark
-    box-shadow: 1px 1px 4px 1px $neutral-dark
-    border-radius: $border-radius-xs
-    cursor: pointer
     transition: all 500ms ease-in-out
     &:hover
         background-color: $primary-dark
         box-shadow: 1px 1px 4px 1px $primary-light
     &.--expanded
-        cursor: auto
+        background-color: $primary-dark
         border-radius: $border-radius-xs
         box-shadow: 1px 1px 4px 1px $neutral-dark
-        background-color: $primary-dark
+        cursor: auto
         margin-bottom: 0
 
 .character__container--additional
+    background-color: $neutral-dark
+    border-radius: $border-radius-xs
+    box-shadow: 1px 1px 4px 1px $neutral-dark
     margin: 0 auto $m auto
     padding: $m
-    background-color: $neutral-dark
-    box-shadow: 1px 1px 4px 1px $neutral-dark
-    border-radius: $border-radius-xs
 
 .character__header
+    color: $white
     font-size: $font-size-xl
     font-weight: $font-weight-bold
-    color: $white
 
 .details__header
-    margin-top: $m-sm
     font-size: $font-size-lg
     font-weight: $font-weight-bold
+    margin-top: $m-sm
     &.--secondary
         color: $secondary
     &.--primary

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import BounceLoader from "react-spinners/BounceLoader";
 import { getCharacters, getMoreCharacters } from "../Redux/characters/actions";
 import {
   loadingSelector,
@@ -8,9 +9,9 @@ import {
 
 import Button from "./Button";
 import CharactersList from "./CharactersList";
-import BounceLoader from "react-spinners/BounceLoader";
 
 const Home = () => {
+
   const [filter, setFilter] = useState(false);
   const dispatch = useDispatch();
 

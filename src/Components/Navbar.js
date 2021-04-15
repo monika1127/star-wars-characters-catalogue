@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { clearCharactersList } from "../Redux/characters/actions";
+
 import { ReactComponent as Logo } from "../assets/star-wars-logo.svg";
 import { ReactComponent as Search } from "../assets/search.svg";
 import { ReactComponent as List } from "../assets/list2.svg";

@@ -2,31 +2,32 @@
   box-sizing: border-box
 
 body
+    background-color: $neutral-very-dark
+    color: $white
     font-family: $font-family-primary
     font-size: $font-size-base
     font-weight: $font-weight-regular
     margin: 0
-    background-color: $neutral-very-dark
-    color: $white
+
 input
      background-color: $neutral-light !important
-     font-size: $font-size-base !important
-     border: none
-     border-top-right-radius: $border-radius-xs
-     border-bottom-right-radius: $border-radius-xs
      border-bottom-left-radius: $border-radius-xs
+     border-bottom-right-radius: $border-radius-xs
+     border-top-right-radius: $border-radius-xs
+     border: none
+     font-size: $font-size-base !important
      outline: none
      padding-left: $m-sm
      &:hover,
      &:focus,
      &:active
-            border: 2px solid $secondary
-            border-top-right-radius: $border-radius-xs
-            border-bottom-right-radius: $border-radius-xs
             border-bottom-left-radius: $border-radius-xs
+            border-bottom-right-radius: $border-radius-xs
+            border-top-right-radius: $border-radius-xs
+            border: 2px solid $secondary
 
 
 .spinner
+    margin: $m
     margin: auto
     text-align: center
-    margin: $m

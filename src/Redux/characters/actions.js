@@ -6,7 +6,7 @@ import {
   SEARCH_CHARACTERS_BY_NAME,
   SEARCH_CHARACTERS_BY_MOVIE,
   REMOVE_LOADING,
-  CLEAR_CHARACTERS_LIST
+  CLEAR_CHARACTERS_LIST,
 } from "./types";
 
 export const setLoading = () => {
@@ -76,16 +76,15 @@ export const searchByName = (name, callback) => async (dispatch) => {
 //
 export const searchByMovie = (characters, callback) => async (dispatch) => {
   dispatch(setLoading());
-  Promise.all(characters.map((url) => fetch(url)))
-    .then((res) => Promise.all(res.map((el) => el.json()))
-    .then((res) => {
-      callback(res.length>0 ? false : true)
+  Promise.all(characters.map((url) => fetch(url))).then((res) =>
+    Promise.all(res.map((el) => el.json())).then((res) => {
+      callback(res.length > 0 ? false : true);
       dispatch({
         type: SEARCH_CHARACTERS_BY_MOVIE,
         payload: res,
       });
     })
-    )
+  );
 };
 
 export const searchMovie = (movie, callback) => async (dispatch) => {
@@ -106,4 +105,3 @@ export const searchMovie = (movie, callback) => async (dispatch) => {
       });
     });
 };
-

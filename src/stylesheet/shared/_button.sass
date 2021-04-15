@@ -1,10 +1,10 @@
 .button
+    border-radius: $border-radius-xs
+    border: none
+    box-shadow: 1px 1px 4px 1px $neutral-dark
     cursor: pointer
     display: block
-    border: none
     outline: none
-    border-radius: $border-radius-xs
-    box-shadow: 1px 1px 4px 1px $neutral-dark
     transition: all 500ms ease-in-out
     &:focus
         opacity: 0.7
@@ -13,23 +13,24 @@
 
 
 .btn--full
-    width: 100%
-    padding: $m-xs
     font-weight: $font-weight-bold
+    padding: $m-xs
+    width: 100%
 
 .btn--small
-    width: 160px
     padding: $m-xs
+    width: 160px
 
 .btn--primary
-    color: $neutral-dark
     background-color: $primary
+    color: $neutral-dark
 
 .btn--secondary
-    color: $neutral-very-light
     background-color: $secondary
     border: 1px solid $secondary-light
-.btn--neutral
     color: $neutral-very-light
+
+.btn--neutral
     background-color: $neutral-dark
     border: 1px solid $neutral
+    color: $neutral-very-light

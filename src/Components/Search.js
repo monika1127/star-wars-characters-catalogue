@@ -1,5 +1,6 @@
 import React, { useState, Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import BounceLoader from "react-spinners/BounceLoader";
 import {
   charactersSelector,
   loadingSelector,
@@ -11,7 +12,6 @@ import {
 } from "../Redux/characters/actions";
 import Button from "./Button";
 import CharactersList from "./CharactersList";
-import BounceLoader from "react-spinners/BounceLoader";
 import CharacterMovies from "./CharacterMovies";
 
 const Search = () => {
@@ -26,15 +26,15 @@ const Search = () => {
   const isLoading = useSelector(loadingSelector);
 
   const setSearchVariant = (variant) => {
-    setSearchType(variant)
-    setMatchedMovie('')
-    setAlert(false)
-  }
+    setSearchType(variant);
+    setMatchedMovie("");
+    setAlert(false);
+  };
 
   const searchForCharacters = () => {
     if (searchValue.length === 0) return;
     setAlert(false);
-    setMatchedMovie('')
+    setMatchedMovie("");
     searchType === "byName" &&
       dispatch(searchByName(searchValue, searchCallbackName));
     searchType === "byMovie" &&
@@ -65,7 +65,7 @@ const Search = () => {
           className={`search__option ${
             searchType === "byName" ? "--active" : "--inactive"
           }`}
-          onClick={() =>  setSearchVariant("byName")}
+          onClick={() => setSearchVariant("byName")}
         >
           by name
         </div>
@@ -103,10 +103,8 @@ const Search = () => {
           No matches found<div>Search for another character.</div>
         </div>
       )}
-      {/* if charactes found */}
-      {characters.length > 0 && (
-        <CharactersList filter={false} />
-      )}
+      {/* if characters found */}
+      {characters.length > 0 && <CharactersList filter={false} />}
 
       {/* if search by movie - list of movies matched */}
       {matchedMovie.length > 0 && (
