@@ -8,3 +8,18 @@ body
     margin: 0
     background-color: $neutral-very-dark
     color: $white
+input
+     background-color: $neutral-light !important
+     font-size: $font-size-base !important
+     border: none
+     border-top-right-radius: $border-radius-xs
+     border-bottom-right-radius: $border-radius-xs
+     border-bottom-left-radius: $border-radius-xs
+     padding-left: $m-sm
+     &:-webkit-autofill
+        &
+        &:hover
+        &:focus
+        &:active
+            font-size: $font-size-base
+            transition: background-color 5000s

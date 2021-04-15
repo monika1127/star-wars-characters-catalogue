@@ -21,8 +21,14 @@
     background-color: $neutral-dark
     font-size: $font-size-sm
     cursor: pointer
+    transition: all 500ms ease-in-out
     &.--active
         background-color: $secondary
+    &.--inactive:hover
+        // color: $secondary
+        background-color: $neutral
+        opacity: 0.6
+
 
 .search__alert
     margin: $m-lg auto
