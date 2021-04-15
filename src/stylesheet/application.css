@@ -249,6 +249,10 @@ input:hover, input:focus, input:active {
           transform: scale(1.1);
 }
 
+.navbar__item.--selected {
+  border-bottom: 1px solid #f7d40a;
+}
+
 .navbar__item--description {
   display: none;
 }

@@ -23,7 +23,7 @@ const CharacterItem = (props) => {
           }
         )
       );
-  }, [showDetails]);
+  }, [showDetails, films]);
 
   return (
     <Fragment>

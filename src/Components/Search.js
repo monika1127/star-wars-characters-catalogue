@@ -71,7 +71,6 @@ const Search = () => {
       {/* when characters list is downloaded */}
       {isLoading && (
         <div className="spinner">
-          {console.log('doo')}
           <BounceLoader color={"#8F1F44"} loading />
         </div>
       )}
